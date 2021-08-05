@@ -1,0 +1,22 @@
+<div id="form-style">
+    <form id="task">
+        <label class="label_name" for="task-name">Name:</label><br>
+        <input class="form-input" type="text" id="task-name" name="task-name" maxlength="30"><br>
+        <label class="label_name" for="task-description">Description:</label><br>
+        <textarea class="form-textarea" type="text" id="task-description" name="task-description"></textarea>
+        <label class="label_name" for="task-description">Date:</label><br>
+        <input type="date" id="task-date" name="task-date" >
+        <label class="label_name">Select Priority: </label>  
+        <select class="form-select">  
+        <option id="option-low" value = "Low"> Low   </option>  
+        <option id="option-medium" value = "Medium"> Medium  </option>  
+        <option id="option-high" value = "High"> High </option>  
+        </select>  
+        <label class="label_name">Select Category: </label>  
+        <select class="form-select">  
+        <option value = "Low"> Low   </option>  
+        </select> 
+        <button id="submit-task" type="submit" class="form-button">Add Task</button>
+        <label class="label_name" hidden="hidden">Error</label> 
+    </form>
+</div>

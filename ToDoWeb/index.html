@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/colourpicker.css">
+    <!-- CSS only -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>ToDo</title>
+</head>
+<body>  
+    <div class="app">
+        <aside class="sidebar scroll-area">
+            <div class="logo_content">
+                <div class="logo">
+                    <i class="bx bxl-c-plus-plus"></i>
+                    <div class="logo_name">ToDo</div>
+                </div>
+                <div id="menu-btn-div">
+                    <i class="bx bx-menu" id="btn"></i>
+                </div>
+            </div>
+            <ul class="nav_list">
+                <li id="search">
+                    <i class='bx bx-search' ></i>
+                   <input type="text" placeholder="Search...">
+                   <span class="tooltip">Search</span>
+                </li>
+                <li id="categories">
+                    <a href="#">
+                        <i id="categories-icon" class="bx bx-category"></i>
+                        <span class="links_name">Categories</span>
+                    </a>
+                    <span class="tooltip">Categories</span>
+                </li>
+                <div id="list-categories" class="display-none">
+                    <li id="add-category">
+                        <input type="text" placeholder="Add Category">
+                        <div id="colour-picker" class="display-none"></div>
+                    </li>
+                    <li id="category-1">
+                        <a href="#">
+                            <span class="links_name">Category one</span>
+                            <i class='bx bxs-edit'></i>
+                        </a>
+                        <span class="tooltip">Category one</span>
+                    </li>
+                </div>
+                <li id="add-task">
+                    <a href="#">
+                        <i id="task-icon" class='bx bx-list-plus'></i>
+                        <span class="links_name">Add Task</span>
+                    </a>
+                    <span class="tooltip">Add Task</span>
+                </li>
+                <div id="add-task-form" class="display-none">
+
+                </div>
+                <li id="filter">
+                    <a href="#">
+                        <i class='bx bx-filter'></i>
+                        <span class="links_name">Filter</span>
+                    </a>
+                    <span class="tooltip">Filter</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="home-section">
+            <div class="text">Dashboard</div>
+            <div id="card-group" class="card-group">
+                <div class="card mb-3" style="max-width: 18rem;">
+                    <div class="card-header d-flex justify-content-between" style="background-color: aqua;">
+                        Header 
+                        
+                        <i class='card-icon bx bxs-edit'></i>
+                    </div>
+                    <div class="card-body">
+                        <span >Low</span>
+                            <h3 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-transparent">
+                        Footer
+                        <i class='card-icon bx bx-trash'></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/colourpicker.js"></script>
+    <script src="./js/addtask.js"></script>
+    <script src="./js/dashboard.js"></script>
+
+    <link rel="stylesheet" href="./css/addtask.css">
+    
+</body>
+</html>
