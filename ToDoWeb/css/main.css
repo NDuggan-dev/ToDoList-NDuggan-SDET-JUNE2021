@@ -18,6 +18,22 @@
   transform: scale(1.5);
 }
 
+span.priority {
+  font-size: 12px;
+}
+span.priority-low {
+  background-color: yellow;
+}
+span.priority-medium {
+  background-color: green;
+}
+span.priority-high {
+  background-color: red;
+}
+.category-form-label{
+  color: #fff;
+}
+
 .sidebar{
   position: fixed;
   left: 0;
@@ -101,7 +117,7 @@
   list-style: none;
 }
 
-#category-1 a{
+.category-item a{
   border-style: solid;
   border-radius: 15px;
   border-color: #fff;
@@ -109,30 +125,33 @@
   justify-content: space-between;
   
   /* background:linear-gradient(#11101D,#ffed4b) 25px 0/4px 100% no-repeat; */
-
-  background: linear-gradient(110deg, #11101D 80%, #ffed4b 20%);
 }
 
 
-#category-1 a .links_name {
+.category-item a .links_name {
   align-items: flex-start;
   float:left;
   text-align: left;
   padding-left: 10px;
 }
-#category-1 a .bxs-edit {
+.category-item a .bxs-edit {
   align-items: flex-end;
   color:#ffffff;
   text-align: right;
-  padding-right: 15px;
 }
-#category-1 a .bxs-edit:hover  {
+.category-item a .bxs-edit:hover  {
   color:#11101D;
   transform: scale(1.5);
   /* background: linear-gradient(110deg, #11101D 60%, #ffed4b 40%); */
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
 }
-#category-1 a:hover{
+.category-item a .bx-trash:hover  {
+  color:#11101D;
+  transform: scale(1.5);
+  /* background: linear-gradient(110deg, #11101D 60%, #ffed4b 40%); */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+}
+.category-item a:hover{
   /* background:linear-gradient(#11101D,#ffed4b) 25px 0/4px 100% no-repeat; */
   background: linear-gradient(110deg, #FFF 80%, #ffed4b 20%);
 }

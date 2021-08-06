@@ -39,15 +39,13 @@
                 </li>
                 <div id="list-categories" class="display-none">
                     <li id="add-category">
-                        <input type="text" placeholder="Add Category">
+                        <label id="add-category-label" class="category-form-label">Enter name: </label>
+                        <input id="category-name"  type="text" placeholder="Add Category" maxlength="25">
+                        <label id="add-colour-label" class="category-form-label display-none">Select colour: </label>
                         <div id="colour-picker" class="display-none"></div>
-                    </li>
-                    <li id="category-1">
-                        <a href="#">
-                            <span class="links_name">Category one</span>
-                            <i class='bx bxs-edit'></i>
-                        </a>
-                        <span class="tooltip">Category one</span>
+                        <button id="submit-category" type="submit" class="form-button display-none">Add Category</button>
+                        <button id="update-category" type="submit" class="form-button display-none">Update Category</button>
+                    </form>
                     </li>
                 </div>
                 <li id="add-task">
@@ -72,22 +70,6 @@
         <section class="home-section">
             <div class="text">Dashboard</div>
             <div id="card-group" class="card-group">
-                <div class="card mb-3" style="max-width: 18rem;">
-                    <div class="card-header d-flex justify-content-between" style="background-color: aqua;">
-                        Header 
-                        
-                        <i class='card-icon bx bxs-edit'></i>
-                    </div>
-                    <div class="card-body">
-                        <span >Low</span>
-                            <h3 class="card-title">Success card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-transparent">
-                        Footer
-                        <i class='card-icon bx bx-trash'></i>
-                    </div>
-                </div>
             </div>
         </section>
     </div>
@@ -99,7 +81,7 @@
     <script src="./js/sidebar.js"></script>
     <script src="./js/colourpicker.js"></script>
     <script src="./js/addtask.js"></script>
-    <script src="./js/dashboard.js"></script>
+
 
     <link rel="stylesheet" href="./css/addtask.css">
     
