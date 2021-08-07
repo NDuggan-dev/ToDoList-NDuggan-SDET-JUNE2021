@@ -29,25 +29,38 @@ public class ToDoApplication {
 					.name("Shopping")
 					.colour("#ff3e05")
 					.build();
+			Category category2 = new CategoryBuilder()
+					.name("School")
+					.colour("#ecca05")
+					.build();
 			Task task1 = new TaskBuilder()
 							.dueDate(LocalDate.of(2022, 1, 6))
-							.title("ShoppingList")
+							.title("Tuesday")
 							.description("Eggs, Bread")
 							.priority(PriorityEnum.Medium)
 							.category(category1)
 							.build();
 			Task task2 = new TaskBuilder()
 					.dueDate(LocalDate.of(2022, 1, 6))
-					.title("ShoppingList")
+					.title("Monday")
 					.description("Eggs, Soup")
 					.priority(PriorityEnum.Low)
 					.category(category1)
 					.build();
+			Task task3 = new TaskBuilder()
+					.dueDate(LocalDate.of(2022, 1, 6))
+					.title("Monday")
+					.description("Eggs, Soup")
+					.priority(PriorityEnum.Low)
+					.category(category2)
+					.build();
 			
 
 			categoryRepo.save(category1);
+			categoryRepo.save(category2);
 			taskRepo.save(task1);
 			taskRepo.save(task2);
+			taskRepo.save(task3);
 		};
 	}
 	
