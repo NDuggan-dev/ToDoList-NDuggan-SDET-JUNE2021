@@ -50,7 +50,6 @@ function waitForElement(selector) {
 
 waitForElement("#color-picker-input").then(() => {
     let radioForm = document.querySelector("#color-picker-input");
-    console.log(radioForm);
     let radios = radioForm.elements["hat-color"];
     for (var i = 0, max = radios.length; i < max; i++) {
         radios[i].onclick = function () {
@@ -188,6 +187,9 @@ function createCategoryElement(data) {
 
     let categoryAnchor = document.createElement("a");
     categoryAnchor.setAttribute("style", `background: linear-gradient(110deg, #11101D 70%, ${data.colour} 30%)`);
+    categoryAnchor.onclick = function () {
+        categoryFilterAllButOne(data.id, categoryObservable);
+    }
     categoryAnchor.onmouseover = function () {
         categoryAnchor.setAttribute("style", `background: linear-gradient(110deg, #FFF 70%, ${data.colour} 30%)`);
     }
@@ -240,7 +242,6 @@ function createCategoryElement(data) {
 }
 
 function createCategories(data) {
-    console.log("Creating");
     for (let i = 0; i < data.length; i++) {
         createCategoryElement(data[i]);
     }
@@ -250,12 +251,12 @@ function deleteCategoryElement(data){
     console.log(data);
     console.log(document.querySelector(`#category-item-${data}`));
     document.querySelector(`#category-item-${data}`).remove();
+    categoryObservable.delete(`${data}`);
 }
 
 /***
  * Observer pattern
  */
-
 const categoryObservable = new Map();
 
 function Observable() 
@@ -280,28 +281,38 @@ Observable.prototype = {
         this.observers.forEach ( fn => {
             fn.call();
         })
-    }
+    },
+    active: true
 }
 
-// const subject = new Subject()
+/**
+ * Category filter
+ */
+let showAllCategoryButton = document.querySelector("#category-item-show-all");
+showAllCategoryButton.onclick = () => {
+    categoryObservable.forEach((key) => {
+        if(key.active == false){
+            key.active = true;
+            key.notify();
+        }
+    });
+}
 
-// function Observer1() 
-// {
-//     console.log("Observer one");
-// }
-
-// function Observer2()
-// {
-//     console.log("Observer two");
-// }
-
-// subject.subscribe(Observer1);
-// subject.subscribe(Observer2);
-
-// categoryObservable.set('a', subject);
-
-// const observable1 = categoryObservable.get('a');
-// observable1.notify();
+function categoryFilterAllButOne(categoryId, categoryObservableMap) {
+    categoryObservableMap.forEach((key, value) => {
+        if(value == categoryId){
+            if(key.active == false){
+                key.active = true;
+                key.notify();
+            }
+        } else {
+            if(key.active == true){
+                key.active = false;
+                key.notify();
+            }
+        }
+    });
+}
 
 
 /**
@@ -346,7 +357,7 @@ function createTasksForCategory(data) {
         for(let i = 0; i < taskData.length; i ++){
 
             let card = document.createElement("div");
-            card.setAttribute("id", `card${categoryData.id}-${taskData.id}`);
+            card.setAttribute("id", `card${taskData[i].id}`);
             card.setAttribute("class", `card mb-3 category-${categoryData.id}`);
             
             let cardHeader = document.createElement("div");
@@ -387,14 +398,12 @@ function createTasksForCategory(data) {
             cardDeleteIcon.setAttribute("class", "card-icon bx bx-trash");
             cardFooter.appendChild(cardDeleteIcon);
 
-            const hideElement = () => {
-                card.classList.toggle("display.none");
+            function hideElement() {
+                card.classList.toggle("display-none");
             }
 
             categoryObservable.get(`${categoryData.id}`).subscribe(hideElement);
 
-            const observable1 = categoryObservable.get("1");
-            console.log(observable1);
             cardGroup.appendChild(card);
         }
         
