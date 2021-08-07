@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.spring.todo.domain.Category;
 import com.qa.spring.todo.service.CategoryService;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
@@ -58,7 +59,7 @@ public class CategoryController {
 	public ResponseEntity<?> deleteCategory(@PathVariable (value="categoryid") Long categoryId){
 		if(this.service.deleteCategory(categoryId)) {
 			System.out.println(categoryId);
-			return ResponseEntity.ok().build();
+			return new ResponseEntity<>(categoryId, HttpStatus.OK);
 		}else {
 			return ResponseEntity.internalServerError().build();
 		}
