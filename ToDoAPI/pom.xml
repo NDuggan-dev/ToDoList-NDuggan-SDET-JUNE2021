@@ -11,8 +11,8 @@
 	<groupId>com.qa</groupId>
 	<artifactId>spring-zoo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-zoo</name>
-	<description>Example project for Spring Zoo </description>
+	<name>ToDo</name>
+	<description>ToDo application</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
