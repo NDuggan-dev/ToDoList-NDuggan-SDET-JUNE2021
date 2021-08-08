@@ -25,11 +25,6 @@
                 </div>
             </div>
             <ul class="nav_list">
-                <li id="search">
-                    <i class='bx bx-search' ></i>
-                   <input type="text" placeholder="Search...">
-                   <span class="tooltip">Search</span>
-                </li>
                 <li id="categories">
                     <a href="#">
                         <i id="categories-icon" class="bx bx-category"></i>
@@ -38,6 +33,13 @@
                     <span class="tooltip">Categories</span>
                 </li>
                 <div id="list-categories" class="display-none">
+                    <li id="categories-menu" class="">
+                        <a href="#">
+                            <i id="categories-icon" class="bx bx-arrow-back"></i>
+                            <span class="links_name">Categories</span>
+                        </a>
+                        <span class="tooltip">Categories</span>
+                    </li>
                     <li id="add-category">
                         <label id="add-category-label" class="category-form-label">Enter name: </label>
                         <input id="category-name"  type="text" placeholder="Add Category" maxlength="25">
@@ -63,18 +65,12 @@
                 <div id="add-task-form" class="display-none">
 
                 </div>
-                <li id="filter">
-                    <a href="#">
-                        <i class='bx bx-filter'></i>
-                        <span class="links_name">Filter</span>
-                    </a>
-                    <span class="tooltip">Filter</span>
-                </li>
+               
             </ul>
         </aside>
         <section class="home-section">
             <div class="text">Dashboard</div>
-            <div id="card-group" class="card-group">
+            <div id="card-group" class="card-columns">
             </div>
         </section>
     </div>
@@ -83,7 +79,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/sidebar.js"></script>
     <script src="./js/colourpicker.js"></script>
     <script src="./js/addtask.js"></script>
 
