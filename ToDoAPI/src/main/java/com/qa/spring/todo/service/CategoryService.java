@@ -1,6 +1,7 @@
 package com.qa.spring.todo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -45,5 +46,13 @@ public class CategoryService {
 			this.repo.deleteById(id);
 			return true;
 		}).orElseThrow(() -> new ResourceNotFoundException("CategoryId" + id + " not found"));
+	}
+
+	public Category getById(Long id) {
+		
+		return this.repo.findById(id).map(category -> {
+			return this.repo.getById(id);
+		})
+				.orElseThrow(() -> new ResourceNotFoundException("CategoryId" + id + "not found"));
 	}
 }

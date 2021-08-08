@@ -22,47 +22,38 @@ public class ToDoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ToDoApplication.class, args);
 	}
+
 	@Bean
 	CommandLineRunner commandLineRunner(TaskRepo taskRepo, CategoryRepo categoryRepo) {
 		return args -> {
-			Category category1 = new CategoryBuilder()
-					.name("Shopping")
-					.colour("#ff3e05")
-					.build();
-			Category category2 = new CategoryBuilder()
-					.name("School")
-					.colour("#ecca05")
-					.build();
-			Task task1 = new TaskBuilder()
-							.dueDate(LocalDate.of(2022, 1, 6))
-							.title("Tuesday")
-							.description("Eggs, Bread")
-							.priority(PriorityEnum.Medium)
-							.category(category1)
-							.build();
-			Task task2 = new TaskBuilder()
-					.dueDate(LocalDate.of(2022, 1, 6))
-					.title("Monday")
-					.description("Eggs, Soup")
-					.priority(PriorityEnum.Low)
-					.category(category1)
-					.build();
-			Task task3 = new TaskBuilder()
-					.dueDate(LocalDate.of(2022, 1, 6))
-					.title("Monday")
-					.description("Eggs, Soup")
-					.priority(PriorityEnum.Low)
-					.category(category2)
-					.build();
-			
+			Category category1 = new CategoryBuilder().name("Shopping").colour("#ff3e05").build();
+			Category category2 = new CategoryBuilder().name("School").colour("#ecca05").build();
+			Category category3 = new CategoryBuilder().name("one").colour("#ff3e05").build();
+			Category category4 = new CategoryBuilder().name("new").colour("#cc6fcc").build();
+			Task task1 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Tuesday").description("Eggs, Bread")
+					.priority(PriorityEnum.Medium).category(category1).build();
+			Task task2 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Monday").description("Eggs, Soup")
+					.priority(PriorityEnum.Low).category(category1).build();
+			Task task3 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Monday").description("Eggs, Soup")
+					.priority(PriorityEnum.Low).category(category2).build();
+			Task task4 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Tuesday").description("Eggs, Bread")
+					.priority(PriorityEnum.Medium).category(category3).build();
+			Task task5 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Monday").description("Eggs, Soup")
+					.priority(PriorityEnum.Low).category(category4).build();
+			Task task6 = new TaskBuilder().dueDate(LocalDate.of(2022, 1, 6)).title("Monday").description("Eggs, Soup")
+					.priority(PriorityEnum.Low).category(category4).build();
 
 			categoryRepo.save(category1);
 			categoryRepo.save(category2);
 			taskRepo.save(task1);
 			taskRepo.save(task2);
 			taskRepo.save(task3);
+			categoryRepo.save(category3);
+			categoryRepo.save(category4);
+			taskRepo.save(task4);
+			taskRepo.save(task5);
+			taskRepo.save(task6);
 		};
 	}
-	
 
 }

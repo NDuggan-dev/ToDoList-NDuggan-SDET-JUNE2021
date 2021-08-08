@@ -39,6 +39,11 @@ public class CategoryController {
 		return new ResponseEntity<List<Category>>(service.getAll(), HttpStatus.OK);
 	}
 	
+	@GetMapping("/{categoryid}")
+	public ResponseEntity<Category> getById(@PathVariable (value="categoryid") Long categoryid){
+		return new ResponseEntity<Category>(service.getById(categoryid), HttpStatus.OK);
+	}
+	
 	// CREATE
 	
 	@PostMapping()
@@ -58,7 +63,6 @@ public class CategoryController {
 	@DeleteMapping("/{categoryid}")
 	public ResponseEntity<?> deleteCategory(@PathVariable (value="categoryid") Long categoryId){
 		if(this.service.deleteCategory(categoryId)) {
-			System.out.println(categoryId);
 			return new ResponseEntity<>(categoryId, HttpStatus.OK);
 		}else {
 			return ResponseEntity.internalServerError().build();
