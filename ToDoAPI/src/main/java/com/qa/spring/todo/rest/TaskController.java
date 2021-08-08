@@ -45,7 +45,7 @@ public class TaskController {
 	public ResponseEntity<Task> create(@PathVariable (value="categoryid") Long categoryId, @Valid @RequestBody Task task){
 		return new ResponseEntity<>(this.service.create(categoryId, task), HttpStatus.CREATED);
 	}
-	
+
 	@PutMapping("/{categoryid}/{taskid}/update")
 	public ResponseEntity<Task> update(@PathVariable (value="categoryid") Long categoryId, 
 			@PathVariable (value="taskid") Long taskId, @Valid @RequestBody Task task){
@@ -55,7 +55,7 @@ public class TaskController {
 	@DeleteMapping("/{taskid}")
 	public ResponseEntity<?> deleteTask(@PathVariable (value="taskid") Long id){
 		if(this.service.deleteTask(id)) {
-			return ResponseEntity.ok().build();
+			return new ResponseEntity<>(id, HttpStatus.OK);
 		}else {
 			return ResponseEntity.internalServerError().build();
 		}
