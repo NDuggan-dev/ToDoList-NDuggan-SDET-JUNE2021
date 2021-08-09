@@ -1,0 +1,13 @@
+com\qa\spring\todo\domain\Category.class
+com\qa\spring\todo\ToDoApplication.class
+com\qa\spring\todo\repo\CategoryRepo.class
+com\qa\spring\todo\domain\PriorityEnum.class
+com\qa\spring\todo\service\CategoryService.class
+com\qa\spring\todo\domain\builder\TaskBuilder.class
+com\qa\spring\todo\domain\Task.class
+com\qa\spring\todo\rest\CategoryController.class
+com\qa\spring\todo\service\TaskService.class
+com\qa\spring\todo\exception\ResourceNotFoundException.class
+com\qa\spring\todo\repo\TaskRepo.class
+com\qa\spring\todo\rest\TaskController.class
+com\qa\spring\todo\domain\builder\CategoryBuilder.class

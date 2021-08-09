@@ -1,0 +1,29 @@
+    <li id="task-menu">
+        <a href="#">
+            <i id="task-icon" class="bx bx-arrow-back"></i>
+            <span class="links_name">Add Task</span>
+        </a>
+        <span class="tooltip">Add Task</span>
+    </li>
+    <form id="task-form" action="" method="POST" onkeydown="return event.key != 'Enter';">
+        <label class="label_name" for="task-name">Name:</label><br>
+        <input class="form-input" type="text" id="task-name" name="task-name" maxlength="30"><br>
+        <label class="label_name" for="task-description">Description:</label><br>
+        <textarea class="form-textarea" type="text" id="task-description" name="task-description"></textarea>
+        <label class="label_name" for="task-description">Date:</label><br>
+        <input type="date" id="task-date" name="task-date" >
+        <label class="label_name">Select Priority: </label>  
+        <select id="task-priority" class="form-select">  
+        <option hidden="" value="">Choose Priority</option>
+        <option id="option-low" value = "Low"> Low   </option>  
+        <option id="option-medium" value = "Medium"> Medium  </option>  
+        <option id="option-high" value = "High"> High </option>  
+        </select>  
+        <label class="label_name">Select Category: </label>  
+        <select id="task-category" class="form-select" aria-placeholder="Category">  
+            <option hidden="" value="">Choose Category</option>
+        </select> 
+        <button type="button" id="submit-task" class="form-button display-none">Add Task</button>
+        <button type="button" id="submit-task-update" class="form-button display-none">Update Task</button>
+        <label id="task-error" class="label_name display-none">Error input all fields</label> 
+    </form>

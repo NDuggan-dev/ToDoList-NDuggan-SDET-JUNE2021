@@ -1,0 +1,13 @@
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\domain\builder\TaskBuilder.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\repo\TaskRepo.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\domain\Category.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\ToDoApplication.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\exception\ResourceNotFoundException.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\rest\CategoryController.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\domain\Task.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\service\TaskService.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\domain\builder\CategoryBuilder.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\domain\PriorityEnum.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\rest\TaskController.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\repo\CategoryRepo.java
+C:\Users\1\Documents\ToDo\ToDoAPI\src\main\java\com\qa\spring\todo\service\CategoryService.java
