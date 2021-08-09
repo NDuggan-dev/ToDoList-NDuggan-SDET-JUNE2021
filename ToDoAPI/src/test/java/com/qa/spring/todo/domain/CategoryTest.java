@@ -1,16 +1,16 @@
 package com.qa.spring.todo.domain;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class CategoryTest {
 		@Test 
 		public void testConstructorOne() {
 			Category category = new Category(1L, "Shopping", "#FFF");
-			assertTrue(category instanceof Category);
+			assertTrue (category instanceof Category);
 		}
 		
 		@Test 
