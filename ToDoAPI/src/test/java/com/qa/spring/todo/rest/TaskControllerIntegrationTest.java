@@ -11,11 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,12 +23,10 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.spring.todo.domain.Category;
 import com.qa.spring.todo.domain.PriorityEnum;
@@ -165,7 +161,6 @@ public class TaskControllerIntegrationTest {
 			
 			ResultMatcher matchStatusPut = status().isNotFound();
 			
-			ResultMatcher matchBodyPut = content().json(updateTaskAsJSON);
 			
 			this.mock.perform(mockPutRequest).andExpect(matchStatusPut).
 			andExpect(result -> assertTrue(result.getResolvedException() instanceof ResourceNotFoundException))
