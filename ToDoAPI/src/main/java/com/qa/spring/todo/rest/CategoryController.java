@@ -44,14 +44,14 @@ public class CategoryController {
 		return new ResponseEntity<Category>(service.getById(categoryid), HttpStatus.OK);
 	}
 	
-	// CREATE
+
 	
 	@PostMapping()
 	public ResponseEntity<Category> createCategory(@RequestBody Category category){
 		return new ResponseEntity<>(this.service.createCategory(category), HttpStatus.CREATED);
 	}
 	
-	// READ ALL 
+
 	@PutMapping("/{categoryid}")
 	public ResponseEntity<Category> updateCategory(@PathVariable (value="categoryid") Long categoryId, @Valid @RequestBody Category category){
 		if(category.getName() == null || category.getColour() == null) {
